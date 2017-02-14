@@ -71,7 +71,7 @@ export let config: Config = {
 
 
 ```
-// protractor.conf.js
+// protractor.conf.ts
 
 import 'jasmine';
 import { Config } from 'protractor';
