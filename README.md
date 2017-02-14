@@ -15,9 +15,16 @@ Instalações:
 - Protractor 
 - Atualização do Webdriver-Manager
 - [Jasmine HTML Reporter ](https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
+- Typescript
+    Instalando typescript globalmente
+    
+    ```
+    npm install -g typescript
+    
+    ```
 
 
-## Protractor com Typescript
+## Protractor Config com Typescript
 
 Protractor Configurações
 
@@ -30,13 +37,16 @@ Organização de diretórios
 		- protractor.conf.js ( main config file )
 
 
-** Configuração do Protractor.conf.js **
+**Configuração do Protractor.conf.ts**
 
 O protractor deve ter um arquivo principal que irá executar todos os specs de teste do Jasmine, esse arquivo pode ter configurações como Framework utilizada, resolução de tela, sessões de navegador executadas em conjunto e etc.
 
 
+
+Configuração padrão
+
 ```
-//protractor.conf.js
+//protractor.conf.ts
 
 import 'jasmine';   // Importa Framework Jasmine
 import { Config } from 'protractor';  // Importação do Config do Protractor
@@ -48,7 +58,6 @@ export let config: Config = {
   noGlobals: true,    // Remove conflito com Jquery
   specs: ['specs/**spec.js'], // Caminho do(s) arquivo(s) spec
   baseUrl: 'http://localhost:8080', // URL base da aplicação
-  maxSessions: 1, // Limitação de execução simultanea de testes no capabilities ( no caso para multicapabilities )
 
   capabilities: {
     browserName: 'chrome'   // Informa o navegador que irá rodar o teste
@@ -56,6 +65,41 @@ export let config: Config = {
 }
 
 ```
+
+
+**Configuração com multicapabilities & responsive browser**
+
+
+```
+// protractor.conf.js
+
+import 'jasmine';
+import { Config } from 'protractor';
+
+export let config: Config = {
+
+  framework: 'jasmine',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  noGlobals: true,
+  specs: ['specs/**spec.js'],
+  baseUrl: 'http://localhost:8080',
+  maxSessions: 1, // Limitação de execução simultanea de testes no capabilities
+
+  multiCapabilities: [{
+    browserName: 'chrome'
+  }, {
+    browserName: 'chrome',
+    chromeOptions: {
+      mobileEmulation:{
+        deviceName: 'Google Nexus 5'    // Irá emular a resolução desse dispositivo 
+      }
+    }
+  }]
+}
+
+```
+
+
 
 
 
