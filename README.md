@@ -1,11 +1,14 @@
 # ProtractorWithTypescript
 Guia Básico para utilização do Protractor com Typescript para seguir os padrões do Angular 2
-
+**Em construção**
 
 
 Instalações:
 
-
+- NodeJS superior a versão v.0.10.0
+- Jasmine
+- Protractor 
+- Atualização do Webdriver-Manager
 
 
 
@@ -28,23 +31,27 @@ O protractor deve ter um arquivo principal que irá executar todos os specs de t
 
 
 ```
-    protractor.conf.js
+//protractor.conf.js
 
-import 'jasmine';
-import { Config } from 'protractor';
+import 'jasmine';   // Importa Framework Jasmine
+import { Config } from 'protractor';  // Importação do Config do Protractor
 
 export let config: Config = {
 
-  framework: 'jasmine',
-  seleniumAddress: 'http://localhost:4444/wd/hub',
-  noGlobals: true,
-  specs: ['specs/**spec.js'],
-  baseUrl: 'http://localhost:8080',
-  maxSessions: 1,
+  framework: 'jasmine',  // Declara o uso do Jasmine
+  seleniumAddress: 'http://localhost:4444/wd/hub',    // Declara a URL do Selenium
+  noGlobals: true,    // Remove conflito com Jquery
+  specs: ['specs/**spec.js'], // Caminho do(s) arquivo(s) spec
+  baseUrl: 'http://localhost:8080', // URL base da aplicação
+  maxSessions: 1, // Limitação de execução simultanea de testes no capabilities ( no caso para multicapabilities )
 
   capabilities: {
-    browserName: 'chrome'
+    browserName: 'chrome'   // Informa o navegador que irá rodar o teste
   }
 }
 
 ```
+
+
+
+
