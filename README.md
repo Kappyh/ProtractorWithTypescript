@@ -8,7 +8,7 @@ Instalações:
 
 - [NodeJS superior a versão v.0.10.0](https://nodejs.org/en/)
 - Jasmine
-    ``
+    ```
     npm install --save-dev jasmine
     
     ```
@@ -17,7 +17,7 @@ Instalações:
 - [Jasmine HTML Reporter ](https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
 
 
-##Protractor com Typescript
+## Protractor com Typescript
 
 Protractor Configurações
 
@@ -30,7 +30,7 @@ Organização de diretórios
 		- protractor.conf.js ( main config file )
 
 
-**Configuração do Protractor.conf.js**
+** Configuração do Protractor.conf.js **
 
 O protractor deve ter um arquivo principal que irá executar todos os specs de teste do Jasmine, esse arquivo pode ter configurações como Framework utilizada, resolução de tela, sessões de navegador executadas em conjunto e etc.
 
