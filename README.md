@@ -26,7 +26,7 @@ Instalações:
 
 ## Protractor Config com Typescript
 
-Protractor Configurações
+Configurações do Protractor
 
 Organização de diretórios
 
