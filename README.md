@@ -14,6 +14,9 @@ Instalações:
     ```
 - Protractor 
 - Atualização do Webdriver-Manager
+```
+    
+```
 - [Jasmine HTML Reporter ](https://www.npmjs.com/package/protractor-jasmine2-html-reporter)
 - Typescript
     Instalando typescript globalmente
@@ -22,9 +25,30 @@ Instalações:
     npm install -g typescript
     
     ```
+- [Instalação do Appium](https://github.com/angular/webdriver-manager/blob/master/docs/mobile.md)
+( Emulador Android)
+```
+    webdriver-manager update --android
+    
+```
 
 
-## Protractor Config com Typescript
+Comandos para iniciar o webdriver
+
+
+Start do Webdriver
+```
+    webdriver-manager start
+```
+
+Start do Webdriver com Android Appium
+
+```
+    webdriver-manager start --android
+```
+
+
+## Protractor Config com Typescript (exemplos)
 
 Configurações do Protractor
 
