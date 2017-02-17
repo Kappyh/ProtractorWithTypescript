@@ -99,6 +99,42 @@ export let config: Config = {
 
 ```
 
+**Specs diferentes para dispositivos/resoluções diferentes**
+
+```
+// protractor.conf.js
+import 'jasmine';
+import { Config } from 'protractor';
+
+export let config: Config = {
+
+  framework: 'jasmine2',
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  noGlobals: true,
+  baseUrl: 'http://localhost:8080',
+  maxSessions: 1,
+
+  multiCapabilities: [{
+    browserName: 'chrome',
+    specs: ['specs/**tests.spec.js'],
+  }, {
+    browserName: 'chrome',
+    chromeOptions: {
+      mobileEmulation: {
+        deviceName: 'Google Nexus 5'
+      }
+    },
+    specs: ['specs/**testsMobile.spec.js'],
+
+  }]
+}
+
+```
+
+### Jasmine HTML Reporter
+
+
+
 
 
 
